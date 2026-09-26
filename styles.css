@@ -1,148 +1,196 @@
+/* ==========================================================================
+   Reset
+   Clears browser defaults so spacing matches the design.
+   ========================================================================== */
+
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+    margin: 0;              /* Remove default outer space */
+    padding: 0;             /* Remove default inner space */
+    box-sizing: border-box; /* Keep padding inside the set width */
 }
 
+/* ==========================================================================
+   Page
+   ========================================================================== */
+
+/* Full-screen canvas. Centers the pricing row. */
 body {
-    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-    background-color: #f7f7f4;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    padding: 20px;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; /* Inter, then system fonts */
+    background-color: #f7f7f4; /* Warm off-white page */
+    display: flex;             /* Enables centering */
+    justify-content: center;   /* Center cards horizontally */
+    align-items: center;       /* Center cards vertically */
+    min-height: 100vh;         /* At least one full screen tall */
+    padding: 20px;             /* Keep cards off the screen edge */
 }
 
+/* ==========================================================================
+   Pricing row
+   ========================================================================== */
+
+/* Side-by-side card row. */
 .cards-container {
-    display: flex;
-    flex-direction: row;
-    gap: 24px;
-    flex-wrap: nowrap;
-    justify-content: center;
-    align-items: flex-start;
+    display: flex;             /* Lay children in a row */
+    flex-direction: row;       /* Left to right: Hobby, Pro, Enterprise */
+    gap: 24px;                 /* Space between cards */
+    flex-wrap: nowrap;         /* Stay on one line; do not stack */
+    justify-content: center;   /* Center the row in the page */
+    align-items: flex-start;   /* Align card tops; do not stretch heights */
 }
 
+/* ==========================================================================
+   Plan card
+   ========================================================================== */
+
+/* One plan. Column layout pins the button to the bottom. */
 .card {
-    display: flex;
-    flex-direction: column;
-    min-height: 380px;
-    background-color: #f2f1ed;
-    border-radius: 4px;
-    padding: 16px;
-    width: 320px;
-    flex-shrink: 0;
+    display: flex;             /* Stack the top block and the button */
+    flex-direction: column;    /* Name and features above the button */
+    min-height: 380px;         /* Shared height so the cards match */
+    background-color: #f2f1ed; /* Slightly darker than the page */
+    border-radius: 4px;        /* Small corner radius */
+    padding: 16px;             /* Inner space on all sides */
+    width: 320px;              /* Fixed card width */
+    flex-shrink: 0;            /* Do not squeeze the card when space is tight */
 }
 
+/* Groups the title, price, and feature list. */
 .card-top {
     display: flex;
-    flex-direction: column;
+    flex-direction: column;    /* Stack those pieces vertically */
 }
 
+/* Plan name. Regular weight, not bold. */
 .card-title {
     font-size: 22px;
-    line-height: 28px;
-    font-weight: 400;
-    color: #26251e;
-    margin-bottom: 8px;
+    line-height: 28px;         /* 28px line box under a 22px size */
+    font-weight: 400;          /* Regular */
+    color: #26251e;            /* Warm near-black */
+    margin-bottom: 8px;        /* Space before the price */
 }
 
+/* Price line. Amount and period sit on one baseline. */
 .card-price {
     font-size: 20px;
-    color: rgba(38, 37, 30, 0.5);
-    display: inline-flex;
-    align-items: baseline;
+    color: rgba(38, 37, 30, 0.5); /* Ink at 50% — muted */
+    display: inline-flex;         /* Keep amount and period in one line */
+    align-items: baseline;        /* Align by the text baseline */
 }
 
+/* Main price figure, such as "Free" or "$20". */
 .card-price-amount {
     font-size: 22px;
-    font-weight: 400;
-    color: rgba(38, 37, 30, 0.5);
+    font-weight: 400;             /* Regular */
+    color: rgba(38, 37, 30, 0.5); /* Same muted ink as the price line */
 }
 
+/* Billing period, such as "/mo.". Smaller than the amount. */
 .card-price-period {
     font-size: 14px;
-    color: rgba(38, 37, 30, 0.5);
+    color: rgba(38, 37, 30, 0.5); /* Same muted ink */
 }
 
+/* Wraps the intro line and the feature list. */
 .card-content {
-    margin-bottom: 32px;
+    margin-bottom: 32px; /* Minimum gap between features and the button */
 }
 
+/* Short line above the features, such as "Includes:". */
 .includes-text {
     font-size: 16px;
-    color: rgba(38, 37, 30, 0.5);
-    margin: 16px 0px;
+    color: rgba(38, 37, 30, 0.5); /* Muted, same as the price */
+    margin: 16px 0px;             /* 16px above and below */
 }
 
+/* Feature list. Native bullets are turned off. */
 .features-list {
-    list-style: none;
-    padding: 0;
+    list-style: none; /* No disc markers */
+    padding: 0;       /* No leftover list indent */
 }
 
+/* One feature row: checkmark, then label. */
 .features-list li {
-    display: flex;
-    align-items: center;
-    margin-bottom: 8px;
+    display: flex;           /* Place the check and label in a row */
+    align-items: center;     /* Vertically center them */
+    margin-bottom: 8px;      /* Space between rows */
     font-size: 16px;
-    color: #26251e;
+    color: #26251e;          /* Full-strength ink, not muted */
 }
 
+/* Checkmark in front of each feature. */
 .checkmark {
-    color: #26251e;
-    font-size: 14px;
-    margin-right: 10px;
-    font-weight: 400;
+    color: #26251e;    /* Same ink as the label */
+    font-size: 14px;   /* Slightly smaller than the label */
+    margin-right: 10px; /* Gap between check and label */
+    font-weight: 400;  /* Regular */
 }
 
+/* ==========================================================================
+   Buttons
+   Default style is the light Hobby button.
+   Add .primary for the dark Pro button.
+   ========================================================================== */
+
+/* Shared button. Light fill, pill shape, sits at the card bottom. */
 .download-button {
-    margin-top: auto;
-    width: fit-content;
-    background-color: #e6e5e0;
-    border: none;
-    border-radius: 999px;
-    padding: 14px 24px;
+    margin-top: auto;       /* Push to the bottom of the card */
+    width: fit-content;     /* Shrink to the label; do not stretch */
+    background-color: #e6e5e0; /* Light warm gray */
+    border: none;           /* No outline */
+    border-radius: 999px;   /* Full pill */
+    padding: 14px 24px;     /* 14px tall, 24px on the sides */
     font-size: 16px;
-    font-weight: 500;
+    font-weight: 500;       /* Medium */
     color: #333;
-    cursor: pointer;
-    transition: background-color 0.2s ease;
+    cursor: pointer;        /* Hand cursor on hover */
+    transition: background-color 0.2s ease; /* Soft color change */
 }
 
+/* Light button, pointer over it. */
 .download-button:hover {
-    background-color: #D8D6CE;
+    background-color: #D8D6CE; /* One step darker */
 }
 
+/* Light button, pressed. Same color as hover. */
 .download-button:active {
     background-color: #D8D6CE;
 }
 
+/* Pro button. Dark fill, white label. */
 .download-button.primary {
     background-color: #111;
     color: #fff;
 }
 
+/* Dark button, pointer over it. */
 .download-button.primary:hover {
     background-color: #333;
 }
 
+/* Dark button, pressed. Same color as hover. */
 .download-button.primary:active {
     background-color: #333;
 }
 
+/* ==========================================================================
+   Reviewer label
+   ========================================================================== */
+
+/* Chip pinned to the top center. Stays put while the page scrolls. */
 .page-label {
-    position: fixed;
-    top: 16px;
-    left: 50%;
-    transform: translateX(-50%);
+    position: fixed;              /* Lock to the viewport */
+    top: 16px;                    /* 16px below the top edge */
+    left: 50%;                    /* Start at the horizontal center */
+    transform: translateX(-50%);  /* Shift back by half its own width */
     font-size: 14px;
-    color: #666;
-    background: #fff;
+    color: #666;                  /* Secondary gray for the rest of the line */
+    background: #fff;             /* White chip */
     padding: 8px 16px;
     border-radius: 8px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08); /* Soft lift off the page */
 }
 
+/* Emphasized words inside the chip, such as "HTML version". */
 .page-label strong {
-    color: #333;
+    color: #333; /* Darker than the surrounding label text */
 }
