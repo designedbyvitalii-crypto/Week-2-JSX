@@ -1,25 +1,43 @@
 <!DOCTYPE html>
+<!-- Page language. Browsers and screen readers use this for pronunciation. -->
 <html lang="en">
 <head>
+    <!-- Lets punctuation and symbols render correctly. -->
     <meta charset="UTF-8">
+    <!-- Scales the layout to the device width on phones. -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Text shown in the browser tab. -->
     <title>Pricing Plans — HTML version</title>
+    <!-- Opens the font connection early so Inter loads faster. -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- Inter at 400, 500, 600, and 700 — the weights this page uses. -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- All visual styles live in this file. -->
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <!-- Reviewer chip. Stays pinned to the top of the screen. -->
     <p class="page-label"><strong>HTML version</strong> — static markup</p>
+
+    <!-- Pricing row. Holds each plan card side by side. -->
     <div class="cards-container">
+
+        <!-- Hobby card. Free plan, quieter button. -->
         <div class="card">
+            <!-- Upper stack: name, price, and features. -->
             <div class="card-top">
+                <!-- Plan name. -->
                 <h3 class="card-title">Hobby</h3>
+                <!-- Price. Free has no billing period. -->
                 <p class="card-price">
                     <span class="card-price-amount">Free</span>
                 </p>
+                <!-- Feature block under the price. -->
                 <div class="card-content">
+                    <!-- Intro line above the list. -->
                     <p class="includes-text">Includes:</p>
+                    <!-- Feature rows. Each item is a check plus a label. -->
                     <ul class="features-list">
                         <li>
                             <span class="checkmark">✓</span>
@@ -36,17 +54,26 @@
                     </ul>
                 </div>
             </div>
+            <!-- Default light button. "secondary" names the quieter action. -->
             <button class="download-button secondary">Download</button>
         </div>
+
+        <!-- Pro card. Paid plan, dark primary button. -->
         <div class="card">
+            <!-- Upper stack: name, price, and features. -->
             <div class="card-top">
+                <!-- Plan name. -->
                 <h3 class="card-title">Pro</h3>
+                <!-- Price plus the billing period, aligned on one baseline. -->
                 <p class="card-price">
                     <span class="card-price-amount">$20</span>
                     <span class="card-price-period">/mo.</span>
                 </p>
+                <!-- Feature block under the price. -->
                 <div class="card-content">
+                    <!-- Intro line. States what this plan adds. -->
                     <p class="includes-text">Everything in Hobby, plus:</p>
+                    <!-- Feature rows. Same check-plus-label pattern as Hobby. -->
                     <ul class="features-list">
                         <li>
                             <span class="checkmark">✓</span>
@@ -67,8 +94,49 @@
                     </ul>
                 </div>
             </div>
+            <!-- Dark filled button. "primary" marks the main action. -->
             <button class="download-button primary">Get Pro</button>
         </div>
+
+        <!-- Enterprise card. Same blocks as Hobby and Pro, placed next in the row. -->
+        <div class="card">
+            <!-- Upper stack: name, price, and features. -->
+            <div class="card-top">
+                <!-- Plan name. -->
+                <h3 class="card-title">Enterprise</h3>
+                <!-- Price. Custom has no billing period, same pattern as Free. -->
+                <p class="card-price">
+                    <span class="card-price-amount">Custom</span>
+                </p>
+                <!-- Feature block under the price. -->
+                <div class="card-content">
+                    <!-- Intro line. States what this plan adds. -->
+                    <p class="includes-text">Everything in Pro, plus:</p>
+                    <!-- Feature rows. Same check-plus-label pattern as Hobby and Pro. -->
+                    <ul class="features-list">
+                        <li>
+                            <span class="checkmark">✓</span>
+                            Org-wide usage controls
+                        </li>
+                        <li>
+                            <span class="checkmark">✓</span>
+                            SSO and admin controls
+                        </li>
+                        <li>
+                            <span class="checkmark">✓</span>
+                            Centralized billing
+                        </li>
+                        <li>
+                            <span class="checkmark">✓</span>
+                            Priority support
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <!-- Light button, same class pair as Hobby's Download. -->
+            <button class="download-button secondary">Contact sales</button>
+        </div>
+
     </div>
 </body>
 </html>
